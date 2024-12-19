@@ -12,7 +12,7 @@ const config = {
 
 // Configuración de CORS
 app.use(cors({
-  origin: 'https://frontend-url.onrender.com', // Cambia esto por la URL de tu frontend en Render
+  origin: 'https://front-fnw0.onrender.com', // Cambia esto por la URL de tu frontend en Render
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   credentials: true
 }));
