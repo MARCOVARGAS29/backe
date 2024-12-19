@@ -6,7 +6,8 @@ async function bootstrap() {
 
   const allowedOrigins = [
     'http://localhost:3000',
-    'http://localhost:4200' 
+    'http://localhost:4200',
+    'https://front-fnw0.onrender.com' // URL adicional del frontend en Render
   ];
 
   app.enableCors({
@@ -18,10 +19,12 @@ async function bootstrap() {
       }
     },
     methods: 'GET,POST,PUT,DELETE,PATCH', // Métodos HTTP permitidos
-    credentials: true // Si necesitas cookies o cabeceras autorizadas
+    credentials: true // Permitir cookies o cabeceras autorizadas
   });
 
-  await app.listen(process.env.PORT || 3000);
- //hola
+  // Escuchar en 0.0.0.0 para que Render acepte conexiones externas
+  await app.listen(process.env.PORT || 3000, '0.0.0.0');
+  console.log(`Servidor corriendo en el puerto ${process.env.PORT || 3000}`);
 }
+
 bootstrap();
