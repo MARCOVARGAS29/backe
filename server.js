@@ -1,5 +1,6 @@
 const express = require('express');
 const sql = require('mssql');
+const cors = require('cors'); // Importa el paquete CORS
 const app = express();
 
 const config = {
@@ -8,6 +9,13 @@ const config = {
   server: 'localhost',
   database: 'tu_base_de_datos'
 };
+
+// Configuración de CORS
+app.use(cors({
+  origin: 'https://frontend-url.onrender.com', // Cambia esto por la URL de tu frontend en Render
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
