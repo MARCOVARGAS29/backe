@@ -21,6 +21,7 @@ async function bootstrap() {
     credentials: true // Si necesitas cookies o cabeceras autorizadas
   });
 
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 3000);
+ //hola
 }
 bootstrap();
