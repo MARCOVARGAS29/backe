@@ -7,7 +7,8 @@ async function bootstrap() {
   const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:4200',
-    'https://front-fnw0.onrender.com' // URL adicional del frontend en Render
+    'https://front-fnw0.onrender.com', // URL adicional del frontend en Render
+    'https://backe-585f.onrender.com'
   ];
 
   app.enableCors({
